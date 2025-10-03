@@ -44,8 +44,10 @@ export const SkillText = () => {
         <motion.div
           variants={slideInFromLeft(1.4)}
           className="mb-4"
-        >{`Rank, Curate, and Share information in your own way.`}</motion.div>
+        >{`Rank, Select, and Share information in your own way.`}</motion.div>
       </motion.div>
     </div>
   );
 };
+
+//
