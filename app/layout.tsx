@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 
 // @ts-ignore
 import "./globals.css";
-import LaserFlow from "@/components/sub/code/laser-flow";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 

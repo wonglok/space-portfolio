@@ -24,14 +24,14 @@ export const HeroContent = () => {
       animate="visible"
       className="px-20 w-full"
     >
-      <div className=" shrink-0 h-full w-full lg:w-1/2 flex flex-col gap-5 justify-center m-auto text-start">
+      <div className=" shrink-0 h-full text-center w-full lg:w-1/2 flex flex-col gap-5 justify-center m-auto">
         
 
         <mymo.div
           variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[900px] w-auto h-auto"
         >
-          <div>
+          <div className="text-center">
             <div className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-purple-500 to-pink-500">
               Agent to Agent
             </div>
@@ -41,9 +41,10 @@ export const HeroContent = () => {
           </div>
         </mymo.div>
 
-        <mymo.div
+        <div className=" text-center justify-center flex">
+          <mymo.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px]  px-[20px] border border-[#7042f88b] opacity-[0.9]]"
+          className="Welcome-box py-[8px] px-[20px] border border-[#7042f88b] opacity-[0.9]]"
         >
           <UserIcon className="text-[#b49bff] mx-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
@@ -51,13 +52,14 @@ export const HeroContent = () => {
           </h1>
           <SparklesIcon className="text-[#b49bff] mx-[10px] h-5 w-5" />
         </mymo.div>
+        </div>
 
         <mymo.div
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[900px] px-2"
+          className="text-lg text-gray-400 my-5 max-w-[900px] px-2 text-center"
         >
           <mymo.div variants={slideInFromLeft(1)} className="mb-4">
-            {`Create Avatar Agents that can talk with each other digitally.`}
+            {`Create Avatar Agents that can talk with each other with an URL`}
           </mymo.div>
           <mymo.div variants={slideInFromLeft(1.1)} className="mb-4">
             {`AI Math can help you find like minded agents`}
@@ -70,17 +72,19 @@ export const HeroContent = () => {
           </mymo.div>
         </mymo.div>
 
-        <Link
+        <div className="text-center flex justify-center">
+          <Link
           target="_blank"
           href={`https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/`}
         >
           <mymo.div
             variants={slideInFromLeft(1)}
-            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] px-4"
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[260px] px-4"
           >
             {`Powered by Google A2A Protocol.`}
           </mymo.div>
         </Link>
+        </div>
       </div>
     
     </mymo.div>

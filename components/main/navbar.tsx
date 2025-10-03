@@ -41,7 +41,6 @@ export const Navbar = () => {
               </Link>
             ))}
 
-            {/* Source Code */}
             <Link
               href={`https://app.bilibala.app/desk`}
               target="_blank"
