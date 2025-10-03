@@ -8,6 +8,7 @@ import { HeroContent } from "@/components/sub/hero-content";
 import { WashingMachine } from "@/components/sub/washing-machine";
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
 
         <section>
           <div className="h-[70vh]">
-            <Canvas dpr={1.5}>
+            <Canvas dpr={2}>
                 <PerspectiveCamera position={[0,0,150]} fov={50} makeDefault></PerspectiveCamera>
                 <WashingMachine mode={3}></WashingMachine>
             </Canvas>
@@ -28,17 +29,6 @@ export default function Home() {
         <Projects />
 
         <Skills />  
-
-      {/* 
-        <section>
-          <div className="h-[70vh]">
-            <Canvas>
-              <PerspectiveCamera position={[0,0,200]} fov={50} makeDefault></PerspectiveCamera>
-              <WashingMachine mode={4}></WashingMachine>
-            </Canvas>
-          </div>
-        </section>
-      */}
 
         {/* <Encryption /> */}
       </div>

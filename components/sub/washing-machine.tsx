@@ -139,12 +139,6 @@ const makeAPI = ({
     new BufferAttribute(new Float32Array(getUVInfo()), 3)
   );
 
-  geo.setAttribute("uv", new BufferAttribute(new Float32Array(getUVInfo()), 3));
-  geo.setAttribute(
-    "normal",
-    new BufferAttribute(new Float32Array(getUVInfo()), 3)
-  );
-
   geo.setAttribute("posIdx", new BufferAttribute(new Float32Array(idxData), 4));
   var uniforms: any = {
     color: { value: new Color("#ffffff") },
@@ -200,8 +194,6 @@ const makeAPI = ({
     `,
     side: DoubleSide,
   });
-  geo.computeBoundingBox();
-  geo.computeBoundingSphere();
 
   uniforms.color.value = new Color("#82A0FF80");
 
@@ -252,6 +244,8 @@ const makeAPI = ({
     uniforms.tPos.value = gpuCompute.getCurrentRenderTarget(posVar).texture;
     uniforms.time.value = time;
     gpuCompute.compute();
+
+    
   };
   api.update = update;
 

@@ -59,9 +59,7 @@ export const StarsCanvas = () => {
           <WashingMachine mode={mode}></WashingMachine>
         </group> */}
 
-        <EffectComposer>
-          <Bloom luminanceThreshold={0.0} intensity={2} mipMapBlur></Bloom>
-        </EffectComposer>
+        
       </Canvas>
 
       {/* <Canvas dpr={[2, 4]}>
