@@ -1,10 +1,12 @@
 "use client";
 
-import { Points, PointMaterial } from "@react-three/drei";
+import { Points, PointMaterial, PerspectiveCamera } from "@react-three/drei";
 import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
-import { useState, useRef, Suspense } from "react";
+import { useState, useRef, Suspense, useEffect } from "react";
 import type { Points as PointsType } from "three";
+import { WashingMachine } from "../sub/washing-machine";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 export const StarBackground = (props: PointsProps) => {
   const ref = useRef<PointsType | null>(null);
@@ -40,12 +42,28 @@ export const StarBackground = (props: PointsProps) => {
   );
 };
 
-export const StarsCanvas = () => (
-  <div className="w-full h-auto fixed inset-0 -z-10">
-    <Canvas camera={{ position: [0, 0, 1] }}>
-      <Suspense fallback={null}>
-        <StarBackground />
-      </Suspense>
-    </Canvas>
-  </div>
-);
+export const StarsCanvas = () => {
+  let [mode, setMode] = useState(5);
+  //
+  useEffect(() => {
+    setMode(Math.floor(7 * Math.random()));
+  }, []);
+  //
+
+  return (
+    <div className="w-full h-auto fixed inset-0 -z-10">
+      {/* <Canvas camera={{ position: [0, 0, 1] }}>
+    </Canvas> */}
+      <Canvas dpr={[2, 4]}>
+        <group rotation={[0, 0, 0]} scale={1.25}>
+          <WashingMachine mode={mode}></WashingMachine>
+        </group>
+
+        <PerspectiveCamera
+          makeDefault
+          position={[0, 0, 200]}
+        ></PerspectiveCamera>
+      </Canvas>
+    </div>
+  );
+};

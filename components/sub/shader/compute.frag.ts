@@ -5,6 +5,7 @@ precision highp sampler2D;
 
 uniform float time;
 uniform sampler2D tIdx;
+uniform float ballMode;
 
 mat3 rotateX(float rad) {
     float c = cos(rad);
@@ -76,6 +77,13 @@ void toBall(vec3 pos, out float az, out float el) {
 // toBall(noiser, az, el);
 // lastVel.xyz = fromBall(1.0, az, el);
 
+vec3 ballify(vec3 pos, float rr) {
+  float az = 0.0;
+  float el = 0.0;
+  vec3 noiser = vec3(pos);
+  toBall(noiser, az, el);
+  return fromBall(rr, az, el);
+}
 
 void toPlane (inout vec2 rect, inout vec4 pos, float squareVertexID, inout bool shouldSkipRender) {
   if (squareVertexID == 0.0) {
@@ -221,16 +229,17 @@ void main ()	{
     toBall(virtualBall, az, el);
 
     toPlane(plane, pos, squareVertexID, shouldSkipRendering);
-//
-    pos.xyz += fromBall(150.0, az, el);
+    
+    //
+    pos.xyz += fromBall(125.0, az, el);
     // pos.xyz += vec3(7.0 * offset);
   } else {
     // ---------
-    float mode = 6.0;
+    float mode = ballMode;
     
-    if (mod(time * 0.05, 1.0) < 0.3) {
-      mode = 1.0;
-    }
+    // if (mod(time * 0.05, 1.0) < 0.3) {
+    //   mode = 1.0;
+    // }
     
     if (mode == 1.0) {
       vec3 mpos = pos.xyz / 350.0 * 3.14159264 * 2.0;
@@ -245,7 +254,8 @@ void main ()	{
       pos.xyz = rotateY(mpos.y) * pos.xyz;
       pos.xyz = rotateZ(mpos.z) * pos.xyz;
 
-      pos.xyz = rotateQ(normalize(mpos.xyz), time) * pos.xyz;
+      pos.xyz = rotateQ(normalize(mpos.xyz + ballify(mpos.xyz, -10.0)), time) * pos.xyz;
+      
     } else if (mode == 3.0) {
       vec3 mpos = pos.xyz / 350.0 * 3.14159264 * 2.0;
 
@@ -259,13 +269,16 @@ void main ()	{
 
       // pos.xyz = rotateX(time) * pos.xyz;
     } else if (mode == 4.0) {
-      vec3 mpos = pos.xyz / 350.0 * 3.14159264 * 2.0;
+      
+    vec3 mpos = pos.xyz / 350.0 * 3.14159264 * 2.0;
 
       pos.xyz = rotateX(mpos.x) * pos.xyz;
       pos.xyz = rotateY(mpos.y) * pos.xyz;
       pos.xyz = rotateZ(mpos.z) * pos.xyz;
 
-      pos.xyz += rand(uv) * 0.8;
+      pos.x += sin(uv.x) * 1.0;
+      pos.y += sin(uv.y) * 1.0;
+      pos.z += rand(uv.xy) * 1.0;
 
       pos.xyz = rotateQ(normalize(mpos.zyx), time * 0.65) * pos.xyz;
     } else if (mode == 5.0) {

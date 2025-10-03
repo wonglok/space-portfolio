@@ -18,11 +18,11 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-col lg:flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
     >
       {/*  */}
       {/*  */}
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className=" shrink-0 h-full w-full lg:w-1/2 flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
@@ -66,7 +66,7 @@ export const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-[400px] h-full flex justify-center items-center"
+        className="w-full h-full flex justify-center items-center"
       >
         {/* <Image
           src="/hero-bg.svg"
@@ -76,13 +76,7 @@ export const HeroContent = () => {
           draggable={false}
           className="select-none"
         /> */}
-        <Canvas dpr={1}>
-          <WashingMachine></WashingMachine>
-          <PerspectiveCamera
-            makeDefault
-            position={[0, 0, 100]}
-          ></PerspectiveCamera>
-        </Canvas>
+        <div className="w-[650px] h-[650px]"></div>
       </motion.div>
     </motion.div>
   );

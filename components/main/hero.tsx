@@ -1,4 +1,8 @@
+"use client";
 import { HeroContent } from "@/components/sub/hero-content";
+import { Canvas } from "@react-three/fiber";
+import { WashingMachine } from "../sub/washing-machine";
+import { PerspectiveCamera } from "@react-three/drei";
 
 export const Hero = () => {
   return (
@@ -10,6 +14,7 @@ export const Hero = () => {
         className="rotate-180 absolute top-[-340px] left-0 w-full h-full object-cover -z-20"
       >
         <source src="/videos/blackhole.webm" type="video/webm" />
+        {/*  */}
       </video>
 
       <HeroContent />
