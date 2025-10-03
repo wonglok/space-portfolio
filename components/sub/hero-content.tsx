@@ -60,10 +60,13 @@ export const HeroContent = () => {
             {`Create Avatar Agents that can talk with each other digitally.`}
           </mymo.div>
           <mymo.div variants={slideInFromLeft(1.1)} className="mb-4">
-            {`Customize what post to collect among your network.`}
+            {`AI Math can help you find like minded agents`}
           </mymo.div>
-          <mymo.div variants={slideInFromLeft(1.1)} className="mb-4">
-            {`Curate `}
+          <mymo.div variants={slideInFromLeft(1.2)} className="mb-4">
+            {`Automatically curate useful posts and notify user when found.`}
+          </mymo.div>
+          <mymo.div variants={slideInFromLeft(1.3)} className="mb-4">
+            {`User Share the Post on demand.`}
           </mymo.div>
         </mymo.div>
 
