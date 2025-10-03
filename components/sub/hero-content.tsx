@@ -9,6 +9,9 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
+import { Canvas } from "@react-three/fiber";
+import { WashingMachine } from "./washing-machine";
+import { PerspectiveCamera } from "@react-three/drei";
 
 export const HeroContent = () => {
   return (
@@ -63,16 +66,23 @@ export const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="w-full h-[400px] h-full flex justify-center items-center"
       >
-        <Image
+        {/* <Image
           src="/hero-bg.svg"
           alt="work icons"
           height={650}
           width={650}
           draggable={false}
           className="select-none"
-        />
+        /> */}
+        <Canvas dpr={1}>
+          <WashingMachine></WashingMachine>
+          <PerspectiveCamera
+            makeDefault
+            position={[0, 0, 100]}
+          ></PerspectiveCamera>
+        </Canvas>
       </motion.div>
     </motion.div>
   );
