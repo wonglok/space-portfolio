@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion as motion2 } from "framer-motion";
 import Image from "next/image";
 
 import { slideInFromTop } from "@/lib/motion";
+
+let motion: any = motion2
 
 export const Encryption = () => {
   return (

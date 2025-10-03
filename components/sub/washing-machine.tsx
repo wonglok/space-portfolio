@@ -58,7 +58,7 @@ const makeAPI = ({
   renderer: WebGLRenderer;
   scene: Scene;
 }) => {
-  let WIDTH = 1024;
+  let WIDTH = 512;
 
   let gpuCompute = new GPUComputationRenderer(WIDTH, WIDTH, renderer);
 
@@ -193,7 +193,7 @@ const makeAPI = ({
         abs(v_tt.x) * 1.0 + 0.5,
         (abs(v_tt.y)) * 0.5 + 0.3,
         abs(v_tt.z) * 1.0 + 0.5,
-        0.7
+        1.0
       );
     }
 

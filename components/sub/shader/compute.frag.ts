@@ -319,7 +319,7 @@ void main ()	{
       float angle = 12.0;
       vec3 center = vec3(0.0);
 
-      // pos.xyz += spiral3(sin(sin(mpos.xyz)), reso, radius, angle, center);
+      // 
 
       pos.xyz = rotateQ(normalize(mpos.xyz * sin(mpos + time)), mod(time * 0.0065, 1.0)) * pos.xyz;
       pos.xyz = rotateQ(normalize(vec3(1.0)), mod(time * 0.0065, 1.0)) * pos.xyz;

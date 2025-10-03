@@ -46,24 +46,32 @@ export const StarsCanvas = () => {
   let [mode, setMode] = useState(5);
   //
   useEffect(() => {
-    setMode(Math.floor(7 * Math.random()));
+    setMode(Math.floor(7 * Math.random()) + 1);
   }, []);
   //
 
   return (
     <div className="w-full h-auto fixed inset-0 -z-10">
-      {/* <Canvas camera={{ position: [0, 0, 1] }}>
-    </Canvas> */}
-      <Canvas dpr={[2, 4]}>
+      <Canvas camera={{ position: [0, 0, 1] }}>
+        <StarBackground></StarBackground>
+
+        <group rotation={[0, 0, 0]} scale={0.01}>
+          <WashingMachine mode={mode}></WashingMachine>
+        </group>
+      </Canvas>
+
+      {/* <Canvas dpr={[2, 4]}>
         <group rotation={[0, 0, 0]} scale={1.25}>
           <WashingMachine mode={mode}></WashingMachine>
         </group>
+
+        
 
         <PerspectiveCamera
           makeDefault
           position={[0, 0, 200]}
         ></PerspectiveCamera>
-      </Canvas>
+      </Canvas> */}
     </div>
   );
 };

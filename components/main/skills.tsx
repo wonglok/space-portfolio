@@ -1,19 +1,19 @@
-import { SkillDataProvider } from "@/components/sub/skill-data-provider";
+// import { SkillDataProvider } from "@/components/sub/skill-data-provider";
 import { SkillText } from "@/components/sub/skill-text";
 
-import {
-  BACKEND_SKILL,
-  FRONTEND_SKILL,
-  FULLSTACK_SKILL,
-  OTHER_SKILL,
-  SKILL_DATA,
-} from "@/constants";
+// import {
+//   BACKEND_SKILL,
+//   FRONTEND_SKILL,
+//   FULLSTACK_SKILL,
+//   OTHER_SKILL,
+//   SKILL_DATA,
+// } from "@/constants";
 
 export const Skills = () => {
   return (
     <section
       id="skills"
-      style={{ transform: "scale(0.9)" }}
+      style={{ transform: "scale(1.0)" }}
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
     >
       <SkillText />
@@ -82,7 +82,7 @@ export const Skills = () => {
       </div> */}
 
       <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
+        <div className="w-full h-full z-[-10] opacity-50 absolute flex items-center justify-center bg-cover">
           <video
             className="w-full h-auto"
             preload="false"
