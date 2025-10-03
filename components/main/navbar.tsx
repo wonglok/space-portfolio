@@ -14,14 +14,15 @@ export const Navbar = () => {
       <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
         {/* Logo + Name */}
         <Link href="#about-me" className="flex items-center">
-          <Image
+          {/* <Image
             src="/logo.svg"
             alt="Our Logo"
             width={70}
             height={70}
             draggable={false}
             className="cursor-pointer h-[35px]"
-          />
+          /> */}
+          <div className="w-[70px]"></div>
           <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">
             Bilibala.app
           </div>
@@ -42,12 +43,12 @@ export const Navbar = () => {
 
             {/* Source Code */}
             <Link
-              href={LINKS.sourceCode}
+              href={`https://app.bilibala.app/desk`}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
             >
-              Source Code
+              Login
             </Link>
           </div>
         </div>
