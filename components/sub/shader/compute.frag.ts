@@ -236,6 +236,7 @@ void main ()	{
   } else {
     // ---------
     float mode = ballMode;
+    // float mode = 1.0;
     
     // if (mod(time * 0.05, 1.0) < 0.3) {
     //   mode = 1.0;
@@ -244,9 +245,11 @@ void main ()	{
     if (mode == 1.0) {
       vec3 mpos = pos.xyz / 350.0 * 3.14159264 * 2.0;
 
-      pos.xyz = rotateX(mpos.x) * pos.xyz;
-      pos.xyz = rotateY(mpos.y) * pos.xyz;
-      pos.xyz = rotateZ(mpos.z) * pos.xyz;
+      pos.xyz = rotateX(mpos.x + ballify(mpos, 0.3).x) * pos.xyz;
+      pos.xyz = rotateY(mpos.y + ballify(mpos, 0.3).y) * pos.xyz;
+      pos.xyz = rotateZ(mpos.z + ballify(mpos, 0.3).z) * pos.xyz;
+
+      pos.xyz = rotateQ(ballify(normalize(mpos.xyz) * ballify(pos.zyx, -10.0), 1.0), time) * pos.xyz;
     } else if (mode == 2.0) {
       vec3 mpos = pos.xyz / 350.0 * 3.14159264 * 2.0;
 
