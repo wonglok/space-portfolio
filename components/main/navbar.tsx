@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,10 +13,7 @@ export const Navbar = () => {
       {/* Navbar Container */}
       <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
         {/* Logo + Name */}
-        <Link
-          href="#about-me"
-          className="flex items-center"
-        >
+        <Link href="#about-me" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Logo"
@@ -25,7 +22,9 @@ export const Navbar = () => {
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">John Doe</div>
+          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">
+            Inter-Site
+          </div>
         </Link>
 
         {/* Web Navbar */}
