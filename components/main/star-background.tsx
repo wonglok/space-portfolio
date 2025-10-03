@@ -1,14 +1,14 @@
 "use client";
 
 import { Points, PointMaterial, PerspectiveCamera } from "@react-three/drei";
-import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
 import { useState, useRef, Suspense, useEffect } from "react";
 import type { Points as PointsType } from "three";
 import { WashingMachine } from "../sub/washing-machine";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
-export const StarBackground = (props: PointsProps) => {
+export const StarBackground = ({...props}) => {
   const ref = useRef<PointsType | null>(null);
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
@@ -55,9 +55,13 @@ export const StarsCanvas = () => {
       <Canvas camera={{ position: [0, 0, 1] }}>
         <StarBackground></StarBackground>
 
-        <group rotation={[0, 0, 0]} scale={0.01}>
+        {/* <group rotation={[0, 0, 0]} scale={0.01}>
           <WashingMachine mode={mode}></WashingMachine>
-        </group>
+        </group> */}
+
+        <EffectComposer>
+          <Bloom luminanceThreshold={0.0} intensity={2} mipMapBlur></Bloom>
+        </EffectComposer>
       </Canvas>
 
       {/* <Canvas dpr={[2, 4]}>

@@ -6,19 +6,23 @@ import { PerspectiveCamera } from "@react-three/drei";
 
 export const Hero = () => {
   return (
-    <div className="relative flex justify-center items-center h-[90vh] w-full">
-      {/* <video
+    <div className="relative  w-full ">
+      <video
         autoPlay
         muted
         loop
         className="rotate-180 absolute top-[-340px] left-0 w-full h-[800px] object-cover -z-20"
       >
         <source src="/videos/blackhole.webm" type="video/webm" />
-      </video> */}
+      </video>
 
-      <div className="bg-black w-full bg-opacity-25 py-12">
-        <HeroContent />
-      </div>
+     
+      <div className="h-[30vh]"></div>
+      
+      <HeroContent></HeroContent>
+
+      {/* <HeroContent /> */}
+ 
     </div>
   );
 };

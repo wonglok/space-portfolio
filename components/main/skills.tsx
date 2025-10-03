@@ -1,5 +1,6 @@
 // import { SkillDataProvider } from "@/components/sub/skill-data-provider";
 import { SkillText } from "@/components/sub/skill-text";
+import { HeroContent } from "../sub/hero-content";
 
 // import {
 //   BACKEND_SKILL,
@@ -16,6 +17,7 @@ export const Skills = () => {
       style={{ transform: "scale(1.0)" }}
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
     >
+
       <SkillText />
 
       {/* 
