@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 // @ts-ignore
 import "./globals.css";
+import LaserFlow from "@/components/sub/code/laser-flow";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <StarsCanvas />
         <Navbar />
         {children}
+
         <Footer />
       </body>
     </html>

@@ -18,7 +18,7 @@ export const SkillText = () => {
       >
         <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
         <h1 className="Welcome-text text-[13px]">
-          Think better with Next.js 14
+          {`Life with one another is crucial.`}
         </h1>
       </motion.div>
 
@@ -26,14 +26,25 @@ export const SkillText = () => {
         variants={slideInFromLeft(0.5)}
         className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
       >
-        Making apps with modern technologies.
+        {`Real life communities are priceless.`}
       </motion.div>
 
       <motion.div
         variants={slideInFromRight(0.5)}
-        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+        className="text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
       >
-        Never miss a task, deadline or idea.
+        <motion.div
+          variants={slideInFromLeft(1.2)}
+          className="mb-4"
+        >{`Create avatars to do self-introduction with other avatars.`}</motion.div>
+        <motion.div
+          variants={slideInFromLeft(1.3)}
+          className="mb-4"
+        >{`Find same minded person.`}</motion.div>
+        <motion.div
+          variants={slideInFromLeft(1.4)}
+          className="mb-4"
+        >{`Rank, Curate, and Share information in your own way.`}</motion.div>
       </motion.div>
     </div>
   );

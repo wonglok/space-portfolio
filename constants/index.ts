@@ -1,4 +1,5 @@
 import { FaYoutube, FaFacebook } from "react-icons/fa";
+import { FaCompass } from "react-icons/fa6";
 import {
   RxDiscordLogo,
   RxGithubLogo,
@@ -283,23 +284,23 @@ export const PROJECTS = [
 
 export const FOOTER_DATA = [
   {
-    title: "Community",
+    title: "Open Source Projects",
     data: [
       {
-        name: "YouTube",
-        icon: FaYoutube,
-        link: "https://youtube.com",
+        name: "EffectNode",
+        icon: FaCompass,
+        link: "https://effectnode.com",
       },
       {
         name: "GitHub",
         icon: RxGithubLogo,
-        link: "https://github.com",
+        link: "https://github.com/wonglok",
       },
-      {
-        name: "Discord",
-        icon: RxDiscordLogo,
-        link: "https://discord.com",
-      },
+      // {
+      //   name: "",
+      //   icon: RxDiscordLogo,
+      //   link: "https://discord.com",
+      // },
     ],
   },
   {
@@ -308,37 +309,49 @@ export const FOOTER_DATA = [
       {
         name: "Instagram",
         icon: RxInstagramLogo,
-        link: "https://instagram.com",
+        link: "https://instagram.com/wonglok831",
       },
       {
         name: "Twitter",
         icon: RxTwitterLogo,
-        link: "https://twitter.com",
+        link: "https://x.com/wonglok831",
       },
       {
         name: "Linkedin",
         icon: RxLinkedinLogo,
-        link: "https://linkedin.com",
+        link: "https://linkedin.com/in/wonglok831",
       },
     ],
   },
   {
     title: "About",
     data: [
+      // {
+      //   name: "Become Sponsor",
+      //   icon: null,
+      //   link: "https://youtube.com",
+      // },
+      // {
+      //   name: "Learning about me",
+      //   icon: null,
+      //   link: "https://example.com",
+      // },
+
       {
-        name: "Become Sponsor",
+        name: "Webbys Awards",
         icon: null,
-        link: "https://youtube.com",
+        link: "https://winners.webbyawards.com/search?sort=0&searchTerm=effectnode",
+      },
+
+      {
+        name: "Anthem Awards",
+        icon: null,
+        link: "https://www.anthemawards.com/winners/list/entry/#!responsible-technology/product/effectnode-metaverse-opensource-boilerplate/0/effectnode/337622",
       },
       {
-        name: "Learning about me",
+        name: "Webbys & Anthem Judge",
         icon: null,
-        link: "https://example.com",
-      },
-      {
-        name: "Contact Me",
-        icon: null,
-        link: "mailto:contact@example.com",
+        link: "https://www.iadas.net/membership/bio/lok-wong/7842",
       },
     ],
   },
@@ -360,5 +373,5 @@ export const NAV_LINKS = [
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/space-portfolio",
+  sourceCode: "https://github.com/wonglok",
 };

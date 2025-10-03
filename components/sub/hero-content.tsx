@@ -12,6 +12,7 @@ import {
 import { Canvas } from "@react-three/fiber";
 import { WashingMachine } from "./washing-machine";
 import { PerspectiveCamera } from "@react-three/drei";
+import Link from "next/link";
 
 export const HeroContent = () => {
   return (
@@ -38,10 +39,10 @@ export const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            <span className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-purple-500 to-pink-500">
               Agent to Agent
             </span>
-            <span className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-cyan-500 to-teal-500">
+            <span className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-violet-500 to-purple-300">
               Avatar Network
             </span>
           </span>
@@ -49,25 +50,29 @@ export const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-lg text-gray-400 my-5 max-w-[600px] px-2"
         >
-          You can now build a few Avatar Agent &apos; m a Full Stack Software
-          Engineer with experience in Website, Mobile, and Software development.
-          Check out my projects and skills.
+          <motion.div variants={slideInFromLeft(1)} className="mb-4">
+            {/*  */}
+            {/*  */}
+            {`Create Avatar Agents that can talk with each other digitally.`}
+          </motion.div>
         </motion.p>
 
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+        <Link
+          target="_blank"
+          href={`https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/`}
         >
-          Learn more
-        </motion.a>
+          <motion.a
+            variants={slideInFromLeft(1)}
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] px-4"
+          >
+            Powered by Google A2A Protocol.
+          </motion.a>
+        </Link>
       </div>
 
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
-      >
+      <div className="w-full h-full flex justify-center items-center">
         {/* <Image
           src="/hero-bg.svg"
           alt="work icons"
@@ -77,7 +82,7 @@ export const HeroContent = () => {
           className="select-none"
         /> */}
         <div className="w-[650px] h-[650px]"></div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
