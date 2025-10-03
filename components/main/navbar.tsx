@@ -15,15 +15,15 @@ export const Navbar = () => {
         {/* Logo + Name */}
         <Link href="#about-me" className="flex items-center">
           <Image
-            src="/logo.png"
-            alt="Logo"
+            src="/logo.svg"
+            alt="Our Logo"
             width={70}
             height={70}
             draggable={false}
-            className="cursor-pointer"
+            className="cursor-pointer h-[35px]"
           />
           <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">
-            Inter-Site
+            Bilibala.app
           </div>
         </Link>
 
