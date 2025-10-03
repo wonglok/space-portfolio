@@ -33,11 +33,12 @@ export const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Providing{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              the best
-            </span>{" "}
-            project experience.
+            <span className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-purple-500 to-cyan-500">
+              Agent to Agent
+            </span>
+            <span className="block p-2 text-transparent bg-clip-text font-bold bg-gradient-to-r from-cyan-500 to-teal-500">
+              Avatar Network
+            </span>
           </span>
         </motion.div>
 
